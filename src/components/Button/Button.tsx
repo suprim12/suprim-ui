@@ -24,6 +24,45 @@ interface Props {
   className?: string
 }
 
+const Button = (props: Props) => {
+  const {
+    children,
+    type,
+    ghost,
+    loading,
+    shadow,
+    disabled,
+    size,
+    variation,
+    icon,
+    iconRight,
+    auto,
+    effect,
+    className,
+    ...rest
+  } = props
+  return (
+    <ButtonStyle
+      type={type}
+      disabled={disabled}
+      className={`
+        ${ghost ? 'ghost' : ''}  
+        ${disabled ? 'disabled' : ''}    
+        ${shadow ? 'shadow' : ''} 
+        ${loading ? 'loading' : ''} 
+        ${auto ? 'auto' : ''}
+        ${effect ? 'effect' : ''}
+        ${size ? `suprim-ui-btn-size-${size}` : ''}
+        ${variation ? `suprim-ui-btn-${variation}` : ''}
+        ${className ? className : ''}
+      `}
+      {...rest}
+    >
+      {icon} {children} {iconRight}
+    </ButtonStyle>
+  )
+}
+
 const defaultProps = {
   variation: 'default' as ButtonTypes,
   size: 'medium' as NormalSizes,
@@ -35,10 +74,6 @@ const defaultProps = {
   effect: true,
   disabled: false,
   className: ''
-}
-
-const Button = (props: Props) => {
-  return <ButtonStyle>{props.children}</ButtonStyle>
 }
 
 Button.defaultProps = defaultProps

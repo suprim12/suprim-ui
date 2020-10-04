@@ -1,15 +1,28 @@
 {
   "name": "suprim-ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.6",
+  "description": "Modern Ui Component",
+  "main": "dist/index.js",
+  "module": "build/index.js",
+  "types": "dist/index.d.ts",
+  "unpkg":"dist/index.umd.js",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production babel src/components  --extensions \".js,.ts,.tsx\" --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+    "prebuild": "rimraf dist build",
+    "build:types": "tsc",
+    "build:compile": "rollup -c",
+    "build:esm": "cross-env NODE_ENV=production babel src/components  --extensions \".js,.ts,.tsx\" --out-dir build --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
+    "build": "run-s build:esm  build:types build:compile",
+    "prepare": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Suprim",
+    "Suprim Ui",
+    "Components",
+    "React",
+    "Nextjs"
+  ],
+  "author": "Suprim Golay",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.10.3",
@@ -48,6 +61,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.18.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-uglify": "^6.0.4",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
@@ -58,5 +78,13 @@
   },
   "dependencies": {
     "styled-components": "^5.2.0"
+  },
+  "files": [
+    "/dist",
+    "/build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suprim12/suprim-ui"
   }
 }
