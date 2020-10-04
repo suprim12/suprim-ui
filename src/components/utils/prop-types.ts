@@ -1,25 +1,46 @@
 export const tuple = <T extends string[]>(...args: T) => args
 
 const buttonTypes = tuple(
+  'primary',
   'default',
   'secondary',
   'success',
   'warning',
   'error',
-  'abort',
-  'secondary-light',
-  'success-light',
-  'warning-light',
-  'error-light',
+  'abort'
 )
 
-const normalSizes = tuple('mini', 'small', 'medium', 'large')
+const textTransforms = tuple(
+  'capitalize',
+  'lowercase',
+  'uppercase',
+  'inherit',
+  'revert',
+  'initial'
+)
 
-const normalTypes = tuple('default', 'secondary', 'success', 'warning', 'error')
+const normalSizes = tuple('mini', 'small', 'medium', 'large', 'fluid', 'auto')
 
-const themeTypes = tuple('dark', 'light')
+const normalTypes = tuple(
+  'primary',
+  'default',
+  'secondary',
+  'success',
+  'warning',
+  'error'
+)
 
-const snippetTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'dark', 'lite')
+const themeTypes = tuple('dark', 'default')
+
+const snippetTypes = tuple(
+  'default',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'dark',
+  'lite'
+)
 
 const cardTypes = tuple(
   'default',
@@ -32,7 +53,7 @@ const cardTypes = tuple(
   'alert',
   'purple',
   'violet',
-  'cyan',
+  'cyan'
 )
 
 const copyTypes = tuple('default', 'slient', 'prevent')
@@ -51,12 +72,14 @@ const placement = tuple(
   'bottomEnd',
   'right',
   'rightStart',
-  'rightEnd',
+  'rightEnd'
 )
 
 const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 export type ButtonTypes = typeof buttonTypes[number]
+
+export type TextTransformTypes = typeof textTransforms[number]
 
 export type NormalSizes = typeof normalSizes[number]
 
