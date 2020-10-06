@@ -15,12 +15,13 @@
     "build": "run-s build:esm  build:types build:compile",
     "prepare": "npm run build"
   },
+  "homepage": "https://suprim.org.np",
   "keywords": [
     "Suprim",
     "Suprim Ui",
     "Components",
-    "React",
-    "Nextjs"
+    "React Ui",
+    "Nextjs Ui"
   ],
   "author": "Suprim Golay",
   "license": "MIT",
