@@ -1,6 +1,6 @@
 {
   "name": "suprim-ui",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Modern and minimalist UI library, originating from Suprim's design.",
   "main": "dist/index.js",
   "module": "build/index.js",
